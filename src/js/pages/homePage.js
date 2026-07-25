@@ -1,6 +1,7 @@
+import header, { toggleMenu } from "../components/Header";
 import button from "../components/button";
 import categories from "../components/categories";
-import header, { toggleMenu } from "../components/Header";
+import aboutUs from "../components/aboutUs";
 
 function initHomePage() {
   const app = document.getElementById("app");
@@ -11,6 +12,7 @@ function initHomePage() {
         ${heroSection()}
         ${categories()}
         ${bannersSection()}
+        ${aboutUs()}
       </main>
     `;
 

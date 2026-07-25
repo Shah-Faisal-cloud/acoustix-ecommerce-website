@@ -2,4 +2,5 @@
 @import 'component_styles/header.css';
 @import 'page_styles/_home.css';
 @import 'component_styles/button.css';
-@import 'component_styles/categories.css'
+@import 'component_styles/categories.css';
+@import 'component_styles/aboutUs.css';
