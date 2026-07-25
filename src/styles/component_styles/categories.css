@@ -52,7 +52,6 @@
         .category-card__link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
@@ -64,12 +63,18 @@
             &:hover,
             &:focus-visible {
                 color: var(--color-orange);
+
+                .category-card__icon {
+                    transform: translateX(4px);
+                }
             }
-            
+
             .category-card__icon {
-                width: 18px;
-                height: 18px;
+                width: 30px;
+                height: 30px;
                 color: var(--color-orange);
+                transform: translateX(-4px);
+                transition: transform 0.2s ease;
             }
         }
     }
