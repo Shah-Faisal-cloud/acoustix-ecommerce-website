@@ -1,7 +1,7 @@
 .categories__container {
     width: 100%;
     max-width: 1110px;
-    margin: 64px auto;
+    margin: 0 auto;
     padding: 0 24px;
     display: flex;
     flex-direction: column;
