@@ -35,7 +35,7 @@ function heroSection() {
       <p class="hero__description">
         Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
       </p>
-      ${button({ color: 'orange', isOutline: false, url: '/pages/headphones.html?product=xx99-mark-two'})}
+      ${button({ color: 'orange', isOutline: false, url: '/pages/product.html?category=headphones&id=xx99'})}
     </div>
   </section>
   `;
@@ -54,14 +54,14 @@ function bannersSection() {
         <p class="zx9-banner__description">
           Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
         </p>
-        ${button({ color: 'black', isOutline: false, url: '/pages/speakers.html?product=zx9' })}
+        ${button({ color: 'black', isOutline: false, url: '/pages/product.html?category=speakers&id=zx9' })}
       </div>
     </div>
 
     <div class="zx7-banner">
       <div class="zx7-banner__content">
         <h2 class="zx7-banner__title">ZX7 Speaker</h2>
-        ${button({ color: 'black', isOutline: true, url: '/pages/speakers.html?product=zx7' })}
+        ${button({ color: 'black', isOutline: true, url: '/pages/product.html?category=speakers&id=zx7' })}
       </div>
     </div>
 
@@ -70,7 +70,7 @@ function bannersSection() {
     
       <div class="yx1-banner__content">
         <h2 class="yx1-banner__title">YX1 Earphones</h2>
-        ${button({ color: 'black', isOutline: true, url: '/pages/earphones.html?product=yx1' })}
+        ${button({ color: 'black', isOutline: true, url: '/pages/product.html?category=earphones&id=yx1' })}
       </div>
     </div>
     </section>
