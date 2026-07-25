@@ -1,47 +1,54 @@
 /* Base Button Component */
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  font-size: 13px;
-  font-family: inherit;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-  user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+    user-select: none;
+    
+    @media (min-width: 768px) {
+        padding: 15px 30px;
+    }
 }
 
 .button--orange {
-  --btn-color: var(--color-orange);
+    --btn-color: var(--color-orange);
 }
 
 .button--black {
-  --btn-color: var(--color-black);
+    --btn-color: var(--color-black);
 }
 
 .button--solid {
-  background-color: var(--btn-color);
-  color: var(--color-white);
+    background-color: var(--btn-color);
+    color: var(--color-white);
 }
 
 .button--solid:hover,
 .button--solid:focus-visible {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .button--outline {
-  background-color: transparent;
-  border-color: var(--btn-color);
-  color: var(--btn-color);
+    background-color: transparent;
+    border-color: var(--btn-color);
+    color: var(--btn-color);
 }
 
 .button--outline:hover,
 .button--outline:focus-visible {
-  background-color: var(--btn-color);
-  color: var(--color-white);
+    background-color: var(--btn-color);
+    color: var(--color-white);
 }
