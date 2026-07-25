@@ -1,4 +1,5 @@
 import button from "../components/button";
+import categories from "../components/categories";
 import header, { toggleMenu } from "../components/Header";
 
 function initHomePage() {
@@ -8,6 +9,7 @@ function initHomePage() {
       ${header()}
       <main>
         ${heroSection()}
+        ${categories()}
       </main>
     `;
 
