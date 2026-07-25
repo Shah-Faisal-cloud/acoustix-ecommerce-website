@@ -24,7 +24,7 @@
 
     .category-card__img {
         width: 200px;
-        height: auto;
+        height: 175px;
         z-index: 10;
         margin-bottom: -50px;
     }
