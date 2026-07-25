@@ -2,6 +2,7 @@ import header, { toggleMenu } from "../components/Header";
 import button from "../components/button";
 import categories from "../components/categories";
 import aboutUs from "../components/aboutUs";
+import footer from "../components/footer";
 
 function initHomePage() {
   const app = document.getElementById("app");
@@ -13,6 +14,7 @@ function initHomePage() {
         ${categories()}
         ${bannersSection()}
         ${aboutUs()}
+        ${footer()}
       </main>
     `;
 
