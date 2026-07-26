@@ -1,0 +1,293 @@
+
+.hero {
+    background-color: var(--color-black);
+    min-height: 730px;
+    height: 100%;
+    transform: translateY(-10%);
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+
+    .hero__img {
+        object-fit: contain;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        z-index: 0;
+
+        @media (max-width: 1023px) {
+            max-width: 750px;
+        }
+    }
+
+    .hero__content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 24px;
+        text-align: center;
+        z-index: 10;
+        padding: 0 24px;
+        max-width: 1110px;
+
+        @media (min-width: 1024px) {
+            align-items: flex-start;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .hero__overline {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: var(--color-gray-500);
+        }
+
+        .hero__title {
+            font-size: 48px;
+            line-height: 1.1;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-white);
+
+            @media (min-width: 1024px) {
+                font-size: 60px;
+                line-height: 1.05;
+            }
+        }
+
+        .hero__description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--color-gray-200);
+            max-width: 350px;
+        }
+    }
+}
+
+.banners-wrapper {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding: 0 24px;
+
+    @media (min-width: 768px) {
+        row-gap: 32px;
+    }
+
+    @media (min-width: 1024px) {
+        row-gap: 48px;
+    }
+
+    .zx9-banner {
+        position: relative;
+        width: 100%;
+        background-color: var(--color-orange);
+        background-image: url("/pattern-circles.svg");
+        background-repeat: no-repeat;
+        background-position: center -120px;
+        background-size: 558px;
+        border-radius: 8px;
+        padding: 55px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+
+        @media (min-width: 768px) {
+            padding: 64px 24px;
+            background-position: center -260px;
+            background-size: 944px;
+        }
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-align: left;
+            padding: 0px 95px;
+            height: 525px;
+            background-position: -200px -75px;
+        }
+
+        .zx9-banner__media {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+
+            @media (min-width: 768px) {
+                margin-bottom: 64px;
+            }
+
+            @media (min-width: 1024px) {
+                margin-bottom: -15px;
+            }
+
+            .zx9-banner__img {
+                width: 172px;
+                height: auto;
+
+                @media (min-width: 768px) {
+                    width: 197px;
+                }
+
+                @media (min-width: 1024px) {
+                    width: 350px;
+                }
+            }
+        }
+
+        .zx9-banner__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 24px;
+            max-width: 350px;
+
+            @media (min-width: 1024px) {
+                align-items: flex-start;
+                transform: translateY(-100px);
+            }
+
+            .zx9-banner__title {
+                font-size: 36px;
+                line-height: 40px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.3px;
+                color: var(--color-white);
+
+                @media (min-width: 768px) {
+                    font-size: 56px;
+                    line-height: 58px;
+                    letter-spacing: 2px;
+                }
+            }
+
+            .zx9-banner__description {
+                font-size: 15px;
+                line-height: 25px;
+                font-weight: 500;
+                color: var(--color-gray-200);
+            }
+        }
+    }
+
+    .zx7-banner {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        border-radius: 8px;
+        background-image: url("/image-speaker-zx7-mobile.jpg");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        padding-left: 24px;
+
+        @media (min-width: 768px) {
+            padding-left: 62px;
+            background-image: url("/image-speaker-zx7-tablet.jpg");
+        }
+
+        @media (min-width: 1024px) {
+            padding-left: 95px;
+            background-image: url("/image-speaker-zx7-desktop.jpg");
+        }
+
+        .zx7-banner__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 32px;
+
+            .zx7-banner__title {
+                font-size: 28px;
+                line-height: 38px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--color-black);
+            }
+        }
+    }
+
+    .yx1-banner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            column-gap: 15px;
+        }
+
+        @media (min-width: 1024px) {
+            column-gap: 30px;
+        }
+
+        .yx1-banner__media {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            background-image: url("/image-earphones-yx1-mobile.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            @media (min-width: 768px) {
+                flex: 1;
+                height: 320px;
+                background-image: url("/image-earphones-yx1-tablet.jpg");
+            }
+
+            @media (min-width: 1024px) {
+                background-image: url("/image-earphones-yx1-desktop.jpg");
+            }
+        }
+
+        .yx1-banner__content {
+            width: 100%;
+            height: 200px;
+            background-color: var(--color-gray-100);
+            border-radius: 8px;
+            padding-left: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            row-gap: 32px;
+
+            @media (min-width: 768px) {
+                flex: 1;
+                height: 320px;
+                padding-left: 41px;
+            }
+
+            @media (min-width: 1024px) {
+                padding-left: 95px;
+            }
+
+            .yx1-banner__title {
+                font-size: 28px;
+                line-height: 38px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--color-black);
+            }
+        }
+    }
+}
+
+
