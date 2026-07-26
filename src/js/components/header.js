@@ -1,4 +1,4 @@
-export default function header() {
+export default function Header() {
   return /* html */ `
     <header class="header">
       <div class="header__container">

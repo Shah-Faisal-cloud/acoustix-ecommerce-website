@@ -4,7 +4,7 @@
     { name: 'Earphones', url: '/pages/earphones.html' }
   ];
   
-export default function categories() {
+export default function Categories() {
 
   return /* html */ `
     <section class="categories__container" aria-label="Product categories">

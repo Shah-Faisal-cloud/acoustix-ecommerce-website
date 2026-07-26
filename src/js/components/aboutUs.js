@@ -1,4 +1,4 @@
-export default function aboutUs() {
+export default function AboutUs() {
   return /* html */ `
   <section class="about-us">
     <div class="about-us__media">

@@ -1,4 +1,4 @@
-export default function button({
+export default function Button({
   color,
   isOutline,
   url,
