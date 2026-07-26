@@ -1,7 +1,9 @@
-@import '_base.css';
-@import 'component_styles/header.css';
-@import 'page_styles/_home.css';
-@import 'component_styles/button.css';
-@import 'component_styles/categories.css';
-@import 'component_styles/aboutUs.css';
-@import 'component_styles/footer.css';
+@import 'base.css';
+@import 'component_styles/Header.css';
+@import 'page_styles/home.css';
+@import 'component_styles/Button.css';
+@import 'component_styles/Categories.css';
+@import 'component_styles/AboutUs.css';
+@import 'component_styles/Footer.css';
+@import 'component_styles/CatalogTemplate.css';
+@import 'component_styles/ProductCard.css';
