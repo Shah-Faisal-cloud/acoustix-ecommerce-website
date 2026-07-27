@@ -17,11 +17,11 @@ export function CatalogTemplate(category) {
       </section>
       <section class="product-card-container">
         ${categoryData.map((item) => {
-          const { id, category, name, imagePath, isNew, description } = item;
+          const { id, category, name, images: { preview: imagesObj }, isNew, description } = item;
           return /* html */ `
-            ${ProductCard({ id: id, category: category, name: name, imagePath: imagePath, isNew: isNew, description: description })}
+            ${ProductCard({ id, category, name, imagesObj, isNew, description })}
           `
-        })}
+        }).join('')}
       </section>
       ${Categories()}
       ${AboutUs()}
