@@ -3,9 +3,9 @@ export default function AboutUs() {
   <section class="about-us">
     <div class="about-us__media">
       <picture>
-        <source media="(min-width: 1024px)" srcset="/image-about-us-desktop.jpg" />
-        <source media="(min-width: 768px)" srcset="/image-about-us-tablet.jpg" />
-        <img src="/image-about-us-mobile.jpg" alt="Man wearing Acoustix headphones" class="about-us__img" />
+        <source media="(min-width: 1024px)" srcset="/about-us/desktop.jpg" />
+        <source media="(min-width: 768px)" srcset="/about-us/tablet.jpg" />
+        <img src="/about-us/mobile.jpg" alt="Man wearing Acoustix headphones" class="about-us__img" />
       </picture>
     </div>
 

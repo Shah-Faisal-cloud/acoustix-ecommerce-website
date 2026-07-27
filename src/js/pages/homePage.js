@@ -14,8 +14,8 @@ function initHomePage() {
         ${Categories()}
         ${BannersSection()}
         ${AboutUs()}
-        ${Footer()}
       </main>
+      ${Footer()}
     `;
 
   toggleMenu();
@@ -25,8 +25,8 @@ function HeroSection() {
   return /* html */ `
   <section class="hero">
     <picture class="hero__picture">
-      <source media="(min-width: 1024px)" srcset="/image-hero-desktop.jpg" />
-      <img src="/image-hero-tablet.jpg" alt="XX99 Mark II Headphones showcase" class="hero__img" />
+      <source media="(min-width: 1024px)" srcset="/hero/desktop.jpg" />
+      <img src="/hero/tablet.jpg" alt="XX99 Mark II Headphones showcase" class="hero__img" />
     </picture>
 
     <div class="hero__content">
@@ -46,7 +46,7 @@ function BannersSection() {
     <section class="banners-wrapper">
     <div class="zx9-banner">
       <div class="zx9-banner__media">
-        <img src="/image-speaker-zx9.png" alt="ZX9 Speaker" class="zx9-banner__img" />
+        <img src="/banners/zx9-speakers/desktop.png" alt="ZX9 Speaker" class="zx9-banner__img" />
       </div>
 
       <div class="zx9-banner__content">

@@ -13,7 +13,7 @@ export default function Categories() {
           return `
             <div class="category-card">
               <img 
-                src="/image-category-thumbnail-${slug}.png" 
+                src="/thumbnails/${slug}.png" 
                 alt="${category.name}" 
                 class="category-card__img" 
               />
