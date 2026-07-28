@@ -1,4 +1,7 @@
+import { getCartCount } from "../state/cart";
+
 export default function Header() {
+  const totalItemsCount = getCartCount();
   return /* html */ `
     <header class="header">
       <div class="header__container">
@@ -48,7 +51,7 @@ export default function Header() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="header__cart-icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
           </svg>
-          <span class="header__cart-count">0</span>
+          <span class="header__cart-count">${totalItemsCount}</span>
         </button>
 
       </div>
@@ -62,12 +65,22 @@ export function toggleMenu() {
   const menu = document.querySelector(".header__nav");
   const navLinks = document.querySelectorAll(".header__menu-link");
 
+  if (!openMenuBtn || !closeMenuBtn || !menu) return;
+
   openMenuBtn.addEventListener("click", () => {
     menu.classList.add("header__nav--open");
+    document.body.classList.add("no-scroll");
   });
 
   closeMenuBtn.addEventListener("click", () => {
     menu.classList.remove("header__nav--open");
+    document.body.classList.remove("no-scroll");
   });
+}
 
+export function initHeaderCartBadge() {
+  window.addEventListener("cart:updated", () => {
+    const headerCartCount = document.querySelector(".header__cart-count");
+      headerCartCount.textContent = getCartCount();
+  });
 }

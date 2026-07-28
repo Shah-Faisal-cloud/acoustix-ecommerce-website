@@ -17,8 +17,6 @@ function initHomePage() {
       </main>
       ${Footer()}
     `;
-
-  toggleMenu();
 }
 
 function HeroSection() {
@@ -35,7 +33,7 @@ function HeroSection() {
       <p class="hero__description">
         Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
       </p>
-      ${Button({ color: "orange", isOutline: false, url: "/pages/product.html?category=headphones&id=xx99" })}
+      ${Button({ color: "orange", isOutline: false, url: "/pages/product.html?category=headphones&id=xx99-mark-two" })}
     </div>
   </section>
   `;
@@ -77,5 +75,5 @@ function BannersSection() {
   `;
 }
 
-  initHomePage();
+initHomePage();
 

@@ -4,13 +4,21 @@ import Categories from "../components/Categories";
 import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 import data from "../../data/data.json";
-import { addToCart, decrementQty, getProductQty, incrementQty, removeFromCart } from "../state/cart";
+import {
+  addToCart,
+  decrementQty,
+  getCartCount,
+  getProductQty,
+  incrementQty,
+  removeFromCart,
+} from "../state/cart";
 
 function initProductDetailPage() {
   const app = document.getElementById("app");
 
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
+  const initialCartCount = getProductQty(productId);
 
   const product = data.find((item) => item.id === productId);
   const {
@@ -62,7 +70,7 @@ function initProductDetailPage() {
           </p>
           <span class="product-detail__price">$ ${price}</span>
           <div class="product-detail__purchase-controls" data-product-id="${id}">
-            ${ControlButtons(0)}
+            ${ControlButtons(initialCartCount)}
           </div>
         </div>
       </section>
@@ -171,12 +179,18 @@ function initProductDetailPage() {
     ${Footer()}
     `;
 
-  const purchaseControls = app.querySelector(".product-detail__purchase-controls");
-  
+  const purchaseControls = app.querySelector(
+    ".product-detail__purchase-controls",
+  );
+
+  window.addEventListener('cart:updated', () => {
+    const updatedProductQty = getProductQty(productId);
+    purchaseControls.innerHTML = ControlButtons(updatedProductQty);
+  })
+
   purchaseControls.addEventListener("click", (e) => {
-    
     const productId = purchaseControls.dataset.productId;
-    
+
     const addBtn = e.target.closest(".product-detail__add-cart-btn");
     const incBtn = e.target.closest(".product-detail__counter-btn--increment");
     const decBtn = e.target.closest(".product-detail__counter-btn--decrement");
@@ -185,22 +199,16 @@ function initProductDetailPage() {
     if (addBtn) {
       addToCart(productId);
     } else if (incBtn) {
-      incrementQty(productId)
+      incrementQty(productId);
     } else if (decBtn) {
-      decrementQty(productId)
+      decrementQty(productId);
     } else if (removeBtn) {
-      removeFromCart(productId)
+      removeFromCart(productId);
     } else {
       return;
     }
-
-    const updatedProductQty = getProductQty(productId);
-    purchaseControls.innerHTML = ControlButtons(updatedProductQty);
-    
   });
 }
-
-initProductDetailPage();
 
 function ControlButtons(quantity) {
   if (quantity === 0) {
@@ -226,3 +234,5 @@ function ControlButtons(quantity) {
   <button type="button" class="product-detail__remove-cart-btn">Remove From Cart</button>
   `;
 }
+
+initProductDetailPage();

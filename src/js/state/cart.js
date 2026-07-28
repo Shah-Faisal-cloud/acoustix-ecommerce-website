@@ -2,6 +2,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
+  window.dispatchEvent(new Event('cart:updated'))
 }
 
 export function getCart() {

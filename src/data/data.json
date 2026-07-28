@@ -17,7 +17,7 @@
       { "quantity": 1, "item": "Hard travel case" }
     ],
     "images": {
-      "cart": "/products/headphones/xx99-mark-two/cart.png",
+      "cart": "/products/headphones/xx99-mark-two/cart.jpg",
       "preview": {
         "mobile": "/products/headphones/xx99-mark-two/preview/mobile.jpg",
         "tablet": "/products/headphones/xx99-mark-two/preview/tablet.jpg",
@@ -52,7 +52,7 @@
       { "quantity": 1, "item": "6.3mm adapter" }
     ],
     "images": {
-      "cart": "/products/headphones/xx99-mark-one/cart.png",
+      "cart": "/products/headphones/xx99-mark-one/cart.jpg",
       "preview": {
         "mobile": "/products/headphones/xx99-mark-one/preview/mobile.jpg",
         "tablet": "/products/headphones/xx99-mark-one/preview/tablet.jpg",
@@ -86,7 +86,7 @@
       { "quantity": 1, "item": "3.5mm audio cable (1.5m)" }
     ],
     "images": {
-      "cart": "/products/headphones/xx59/cart.png",
+      "cart": "/products/headphones/xx59/cart.jpg",
       "preview": {
         "mobile": "/products/headphones/xx59/preview/mobile.jpg",
         "tablet": "/products/headphones/xx59/preview/tablet.jpg",
@@ -122,7 +122,7 @@
       { "quantity": 1, "item": "Power cable" }
     ],
     "images": {
-      "cart": "/products/speakers/zx9/cart.png",
+      "cart": "/products/speakers/zx9/cart.jpg",
       "preview": {
         "mobile": "/products/speakers/zx9/preview/mobile.jpg",
         "tablet": "/products/speakers/zx9/preview/tablet.jpg",
@@ -157,7 +157,7 @@
       { "quantity": 1, "item": "Power cable" }
     ],
     "images": {
-      "cart": "/products/speakers/zx7/cart.png",
+      "cart": "/products/speakers/zx7/cart.jpg",
       "preview": {
         "mobile": "/products/speakers/zx7/preview/mobile.jpg",
         "tablet": "/products/speakers/zx7/preview/tablet.jpg",
@@ -192,7 +192,7 @@
       { "quantity": 1, "item": "Travel pouch" }
     ],
     "images": {
-      "cart": "/products/earphones/yx1/cart.png",
+      "cart": "/products/earphones/yx1/cart.jpg",
       "preview": {
         "mobile": "/products/earphones/yx1/preview/mobile.jpg",
         "tablet": "/products/earphones/yx1/preview/tablet.jpg",
