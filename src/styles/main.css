@@ -8,4 +8,5 @@
 @import 'component_styles/CatalogTemplate.css';
 @import 'component_styles/ProductCard.css';
 @import 'page_styles/productDetail.css';
-@import 'component_styles/CartModal.css'
+@import 'component_styles/CartModal.css';
+@import 'page_styles/checkout.css'

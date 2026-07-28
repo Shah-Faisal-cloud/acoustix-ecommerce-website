@@ -29,17 +29,17 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: 64px;
-    margin-bottom: 112px;
+    padding-bottom: 112px;
 
     @media (min-width: 768px) {
         row-gap: 80px;
     }
     @media (min-width: 1024px) {
         row-gap: 96px;
-        margin-bottom: 160px;
+        padding-bottom: 160px;
     }
     @media (min-width: 1280px) {
-        margin-bottom: 192px;
+        padding-bottom: 192px;
     }
 }
 

@@ -74,7 +74,7 @@ function CartModalContent() {
     </div>
 
     <div style="margin-top: -8px; ${isCartEmpty ? "cursor: not-allowed;" : "cursor: pointer;"}">
-    ${Button({ color: "orange", isOutline: false, label: "Checkout", url: "/checkout.html", styles: "width: 100%;", isDisabled: isCartEmpty })}
+    ${Button({ color: "orange", isOutline: false, label: "Checkout", url: "/pages/checkout.html", styles: "width: 100%;", isDisabled: isCartEmpty })}
     </div>
   </div>
   `;
