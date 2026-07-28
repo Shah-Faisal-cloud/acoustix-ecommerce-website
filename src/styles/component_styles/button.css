@@ -51,3 +51,8 @@
     background-color: var(--btn-color);
     color: var(--color-white);
 }
+
+.button--solid.button--orange.button--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
