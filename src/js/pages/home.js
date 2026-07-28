@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 
 function initHomePage() {
   const app = document.getElementById("app");
+  if (!app) return;
 
   app.innerHTML = /* html */ `
       ${Header()}

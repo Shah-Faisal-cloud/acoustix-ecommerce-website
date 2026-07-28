@@ -1,4 +1,3 @@
-
 import CartModal, { initCartModal } from "./components/CartModal.js";
 import { toggleMenu, initHeaderCartBadge } from "./components/Header.js";
 
@@ -6,7 +5,9 @@ function setupGlobalUI() {
   const app = document.getElementById("app");
   if (!app) return;
 
-  app.insertAdjacentHTML("beforeend", CartModal());
+  if (!document.getElementById("cartModal")) {
+      document.body.insertAdjacentHTML("beforeend", CartModal());
+    }
 
   initCartModal();
   toggleMenu();

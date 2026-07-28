@@ -15,6 +15,7 @@ import {
 
 function initProductDetailPage() {
   const app = document.getElementById("app");
+  if (!app) return;
 
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
@@ -182,6 +183,8 @@ function initProductDetailPage() {
   const purchaseControls = app.querySelector(
     ".product-detail__purchase-controls",
   );
+
+  if (!purchaseControls) return;
 
   window.addEventListener('cart:updated', () => {
     const updatedProductQty = getProductQty(productId);

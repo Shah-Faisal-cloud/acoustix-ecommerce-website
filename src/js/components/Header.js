@@ -32,7 +32,7 @@ export default function Header() {
           
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a href="/" class="header__menu-link header__menu-link--active">home</a>
+              <a href="/" class="header__menu-link">home</a>
             </li>
             <li class="header__menu-item">
               <a href="/pages/headphones.html" class="header__menu-link">headphones</a>
@@ -81,6 +81,7 @@ export function toggleMenu() {
 export function initHeaderCartBadge() {
   window.addEventListener("cart:updated", () => {
     const headerCartCount = document.querySelector(".header__cart-count");
-      headerCartCount.textContent = getCartCount();
+    if (!headerCartCount) return;
+    headerCartCount.textContent = getCartCount();
   });
 }

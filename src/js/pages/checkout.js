@@ -5,6 +5,7 @@ import data from "../../data/data.json";
 
 function initCheckoutPage() {
   const app = document.getElementById("app");
+  if (!app) return;
 
   const rawCartArray = getCart();
   const filteredCartArray = rawCartArray.map((cartItem) => {
@@ -192,21 +193,25 @@ function initCheckoutPage() {
   const cash = document.querySelector(".checkout-form__cash-notice");
   const form = document.getElementById("checkout-form");
 
-  paymentRadios.forEach((radio) => {
-    radio.addEventListener("change", (e) => {
-      if (e.target.value === "e-money") {
-        emoney.style.display = "flex";
-        cash.style.display = "none";
-      } else {
-        emoney.style.display = "none";
-        cash.style.display = "flex";
-      }
-    });
-  });
-
-  form.addEventListener("submit", () => {
-    emptyCart();
-  });
+  if (paymentRadios.length > 0 && emoney && cash) {
+      paymentRadios.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+          if (e.target.value === "e-money") {
+            emoney.style.display = "flex";
+            cash.style.display = "none";
+          } else {
+            emoney.style.display = "none";
+            cash.style.display = "flex";
+          }
+        });
+      });
+    }
+  
+    if (form) {
+      form.addEventListener("submit", () => {
+        emptyCart();
+      });
+    }
 }
 
 initCheckoutPage();

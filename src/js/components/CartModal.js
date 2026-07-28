@@ -131,6 +131,8 @@ export function initCartModal() {
   );
   const headerCartCount = document.querySelector(".header__cart-count");
 
+  if (!cartModalGrandWrapper || !cartModalWrapper) return;
+
   function updateModalUI() {
     cartModalWrapper.innerHTML = CartModalContent();
     const totalItemsCount = getCartCount();
