@@ -2,10 +2,23 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { emptyCart, getCart } from "../state/cart";
 import data from "../../data/data.json";
+import Button from "../components/Button"
+
+const cart = getCart();
+if (cart.length === 0) {
+  window.location.replace('/index.html');
+}
 
 function initCheckoutPage() {
   const app = document.getElementById("app");
   if (!app) return;
+
+  const cart = getCart();
+    if (cart.length === 0) {
+      window.location.replace('/index.html');
+      return;
+    }
+  
 
   const rawCartArray = getCart();
   const filteredCartArray = rawCartArray.map((cartItem) => {
@@ -109,11 +122,11 @@ function initCheckoutPage() {
               <div class="checkout-form__row checkout-form__emoney-fields">
                 <div class="checkout-form__field">
                   <label for="emoney-number" class="checkout-form__label">e-Money Number</label>
-                  <input type="text" id="emoney-number" name="emoney-number" class="checkout-form__input" placeholder="238521993" required>
+                  <input type="text" id="emoney-number" name="emoney-number" class="checkout-form__input emoney-input" placeholder="238521993" required>
                 </div>
                 <div class="checkout-form__field">
                   <label for="emoney-pin" class="checkout-form__label">e-Money PIN</label>
-                  <input type="text" id="emoney-pin" name="emoney-pin" class="checkout-form__input" placeholder="6891" required>
+                  <input type="text" id="emoney-pin" name="emoney-pin" class="checkout-form__input emoney-input" placeholder="6891" required>
                 </div>
               </div>
 
@@ -184,14 +197,17 @@ function initCheckoutPage() {
     </div>
     </main>
     ${Footer()}
+    ${ThankYouModal()}
   `;
 
   const paymentRadios = document.querySelectorAll(
     'input[name="payment-method"]',
   );
   const emoney = document.querySelector(".checkout-form__emoney-fields");
+  const emoneyInputs = document.querySelectorAll('.emoney-input');
   const cash = document.querySelector(".checkout-form__cash-notice");
   const form = document.getElementById("checkout-form");
+  const thankYouModal = document.getElementById('thank-you-popup');
 
   if (paymentRadios.length > 0 && emoney && cash) {
       paymentRadios.forEach((radio) => {
@@ -199,19 +215,38 @@ function initCheckoutPage() {
           if (e.target.value === "e-money") {
             emoney.style.display = "flex";
             cash.style.display = "none";
+            emoneyInputs.forEach(input => input.required = true);
           } else {
             emoney.style.display = "none";
             cash.style.display = "flex";
+            emoneyInputs.forEach(input => input.required = false);
           }
         });
       });
     }
   
     if (form) {
-      form.addEventListener("submit", () => {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
         emptyCart();
+        thankYouModal.classList.add('thank-you-modal__wrapper--open')
+        document.body.classList.add('no-scroll')
       });
     }
 }
 
 initCheckoutPage();
+
+
+function ThankYouModal() {
+  return /* html */ `
+    <div class="thank-you-modal__wrapper" id="thank-you-popup">
+        <div class="thank-you-modal">
+            <svg class="thank-you-modal__icon" width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#D87D4A" cx="32" cy="32" r="32"/><path stroke="#FFF" stroke-width="4" d="m20.754 33.333 6.751 6.751 15.804-15.803"/></g></svg>
+            <h2 class="thank-you-modal__title">thank you <br>for your order</h2>
+            <p class="thank-you-modal__text">Your order has been successfully placed. You can explore more of our premium audio products anytime.</p>
+            ${Button({ color: 'orange', isOutline: false, url: '/index.html', label: 'Go To Home Page', styles: 'width: 100%;'})}
+        </div>
+    </div>
+  `
+}
