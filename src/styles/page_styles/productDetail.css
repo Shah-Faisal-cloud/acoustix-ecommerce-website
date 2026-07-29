@@ -135,7 +135,8 @@
                         align-items: center;
                         transition: background-color 0.2s ease, color 0.2s ease;
 
-                        &:hover {
+                        &:hover,
+                        &:active {
                             background-color: var(--color-orange);
                             color: var(--color-white);
                         }
@@ -165,7 +166,8 @@
                     border: none;
                     transition: opacity 0.2s ease;
                     
-                    &:hover {
+                    &:hover,
+                    &:active {
                         opacity: 0.8;
                     }
                 }

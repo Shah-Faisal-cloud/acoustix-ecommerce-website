@@ -36,7 +36,8 @@
 }
 
 .button--solid:hover,
-.button--solid:focus-visible {
+.button--solid:focus-visible,
+.button--solid:active {
     opacity: 0.8;
 }
 
@@ -47,7 +48,8 @@
 }
 
 .button--outline:hover,
-.button--outline:focus-visible {
+.button--outline:focus-visible,
+.button--outline:active {
     background-color: var(--btn-color);
     color: var(--color-white);
 }
