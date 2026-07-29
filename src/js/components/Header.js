@@ -60,21 +60,20 @@ export default function Header() {
 }
 
 export function toggleMenu() {
-  const openMenuBtn = document.querySelector(".menu__toggle");
-  const closeMenuBtn = document.querySelector(".header__nav-close");
-  const menu = document.querySelector(".header__nav");
-  const navLinks = document.querySelectorAll(".header__menu-link");
+  document.addEventListener("click", (e) => {
+    const openMenuBtn = e.target.closest(".menu__toggle");
+    const closeMenuBtn = e.target.closest(".header__nav-close");
+    const menu = document.querySelector(".header__nav");
 
-  if (!openMenuBtn || !closeMenuBtn || !menu) return;
+    if (openMenuBtn && menu) {
+      menu.classList.add("header__nav--open");
+      document.body.classList.add("no-scroll");
+    }
 
-  openMenuBtn.addEventListener("click", () => {
-    menu.classList.add("header__nav--open");
-    document.body.classList.add("no-scroll");
-  });
-
-  closeMenuBtn.addEventListener("click", () => {
-    menu.classList.remove("header__nav--open");
-    document.body.classList.remove("no-scroll");
+    if (closeMenuBtn && menu) {
+      menu.classList.remove("header__nav--open");
+      document.body.classList.remove("no-scroll");
+    }
   });
 }
 
