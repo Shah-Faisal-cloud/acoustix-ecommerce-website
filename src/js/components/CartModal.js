@@ -129,14 +129,11 @@ export function initCartModal() {
   const cartModalContentWrapper = document.querySelector(
     ".cart-modal__content-wrapper",
   );
-  const headerCartCount = document.querySelector(".header__cart-count");
 
   if (!cartModalGrandWrapper || !cartModalWrapper) return;
 
   function updateModalUI() {
     cartModalWrapper.innerHTML = CartModalContent();
-    const totalItemsCount = getCartCount();
-    headerCartCount.textContent = totalItemsCount;
   }
 
   window.addEventListener("cart:updated", updateModalUI);

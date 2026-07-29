@@ -7,7 +7,6 @@ import data from "../../data/data.json";
 import {
   addToCart,
   decrementQty,
-  getCartCount,
   getProductQty,
   incrementQty,
   removeFromCart,
