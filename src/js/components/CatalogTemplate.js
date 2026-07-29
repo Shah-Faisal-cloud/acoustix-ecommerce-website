@@ -13,7 +13,7 @@ export function CatalogTemplate(category) {
   ${Header()}
   <main>
       <section class="page-title-wrapper">
-          <h1 class="page-title-wrapper__heading">Headphones</h1>
+      <h1 class="page-title-wrapper__heading">${category}</h1>
       </section>
       <section class="product-card-container">
         ${categoryData.map((item) => {
